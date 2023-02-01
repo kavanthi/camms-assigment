@@ -1,0 +1,24 @@
+{
+  "name": "testcafe-assignment",
+  "version": "1.0.0",
+  "description": "Camms Testcafe Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test:chrome": "testcafe chrome ./tests -s takeOnFails=true --reporter json",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true --disable-page-caching",
+    "test:chrome:mobile": "testcafe chrome:emulation:device=iphone x ./tests -s takeOnFails=true",
+    "test:firefox": "testcafe firefox ./tests",
+    "test:safari": "testcafe safari ./tests",
+    "test:multiple": "testcafe chrome, firefox ./tests"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "testcafe": "^2.2.0",
+    "xpath-to-css": "^1.1.0"
+  },
+  "dependencies": {
+    "testcafe-reporter-json": "^2.2.0"
+  }
+}

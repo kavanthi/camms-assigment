@@ -1,0 +1,12 @@
+{
+    "screenshotPath":"/screenshots",
+    "screenshotPathPattern":"${DATE}_${TIME}/${FIXTURE}.png",
+
+    "userVariables": {
+        "baseurl": "https://www.saucedemo.com/",
+        "userName": "performance_glitch_user",
+        "password": "secret_sauce",
+        "sauceLabsFleeceJacketPrice":"$49.99"
+    }
+
+}
