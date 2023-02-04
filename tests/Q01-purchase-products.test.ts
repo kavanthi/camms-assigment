@@ -8,7 +8,7 @@ import CheckoutPage from '../page-objects/pages/CheckoutPage';
 
 
 const loginPage = new LoginPage()
-const navBar = new Navbar()
+const navBar = new Navbar() 
 const { userVariables } = require('testcafe');
 const productPage = new ProductPage()
 const basePage= new BasePage()
@@ -29,14 +29,15 @@ test.before(async t => {
 
     await basePage.setTestspeed(1)
     await loginPage.loginToApp(userVariables.userName, userVariables.password)
-    await navBar.verifyProductHeader()
+    await t.expect(navBar.productheaderTitle.exists).ok()
     await t.click(productPage.SauceLabsFleeceJacket)
     
     await t.expect(productPage.SauceLabsFleeceJacketPrice.exists).ok()
     await navBar.clickOnBackToProduct()
     await productPage.AddProductsToCart()
     await navBar.clickOnShoppingCart()
-    await yourCartPage.verifyCartItems()
+    await t.expect(yourCartPage.productName1.exists).ok()
+    await t.expect(yourCartPage.productName2.exists).ok()
     await yourCartPage.clickOnCheckout()
 
     await checkoutPage.fillYourInformationForm()

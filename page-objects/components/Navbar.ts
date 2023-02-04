@@ -8,10 +8,6 @@ class Navbar {
     backToProductButton: Selector = Selector('#back-to-products')
     shoppingcartLink: Selector = Selector('.shopping_cart_container')
 
-    async verifyProductHeader(){
-        await t.expect(this.productheaderTitle.exists).ok()
-    }
-
     async clickOnBackToProduct(){
         await t
             .click(this.backToProductButton)
